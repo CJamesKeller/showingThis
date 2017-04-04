@@ -15,22 +15,35 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
   <body>
+    <h1>Real Estate Listings</h1>
     <div ng-controller="appendController" class="col-md-12">
-      <div ng-repeat="listing in appendListing" class="col-xs-4 col-md-2 thumbnail">
-        <p>
-          {{listing.city}}
-        </p>
-        <p>
-          {{listing.cost || listing.rent}}
-        </p>
-        <p>
-          {{listing.sqft}}
-        </p>
-        <button type="button" class="deleteButton" ng-click="delete($index)">Delete</button>
+      <div class="inputBar">
+        Search:<input type="text" ng-model="searching">
       </div>
-
+      <div ng-repeat="listing in appendListing" class="col-md-3 listingWrap"
+      ng-show="listing.city.toLowerCase().includes( searching.toLowerCase() )">
+        <div class="eachListing house" ng-show="listing.cost">
+          <div>
+            <span class='glyphicon glyphicon-home'></span>
+            <p>City: {{listing.city}}</p>
+            <p>Cost: {{listing.cost}}</p>
+            <p>Sqft: {{listing.sqft}}</p>
+            <button type="button" class="deleteButton" ng-click="delete($index)">Delete</button>
+          </div>
+        </div>
+        <div class="eachListing apartment" ng-show="listing.rent">
+          <div>
+            <span class='glyphicon glyphicon-home'></span>
+            <p>City: {{listing.city}}</p>
+            <p>Rent: {{listing.rent}}</p>
+            <p>Sqft: {{listing.sqft}}</p>
+            <button type="button" class="deleteButton" ng-click="delete($index)">Delete</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="vendors/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/vendors/css/bootstrap.css">
   </body>
 </html>

@@ -1,4 +1,33 @@
+body
+{
+  text-align: center;
+}
+
+.inputBar
+{
+  padding: 10px;
+}
+
 .eachListing
 {
-  background-color: red;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.listingWrap
+{
+  border: 2px solid grey;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.apartment
+{
+  background-color: lightsteelblue;
+}
+
+.house
+{
+  background-color: forestgreen;
 }

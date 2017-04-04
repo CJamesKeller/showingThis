@@ -9,4 +9,5 @@ myApp.controller("appendController", ["$scope", function($scope)
   {
     $scope.appendListing.splice(index, 1);
   };
+  $scope.searching = "";
 }]);
